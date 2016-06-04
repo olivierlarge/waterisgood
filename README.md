@@ -4,7 +4,7 @@ Lancement du site en ligne de commande :
 
 > **Usage**  
 > cd ./flask-datamap/  
-> python __init__.py  
+> python \_\_init\_\_.py  
 
 
 Installation des bibliotheques externes via Bower :
