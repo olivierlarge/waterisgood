@@ -1,8 +1,14 @@
-# waterisgood
-lancement du site en ligne de commande : 
-python __init__.py
+waterisgood
+-------------
+Lancement du site en ligne de commande : 
+
+> **Usage**  
+> cd ./flask-datamap/  
+> python __init__.py  
+
 
 Installation des bibliotheques externes via Bower :
-usage :
-cd flask-datamap/static/  #Aller dans static
-bower install [component]  #Lancer commande d'installation
+
+> **Usage**  
+> cd ./flask-datamap/static/  
+> bower install [component]  
