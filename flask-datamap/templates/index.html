@@ -57,13 +57,16 @@
         <!-- Page Content -->
         <!-- This is datamap-->
         <div>
+            <
             <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
             <script src="../static/bower_components/datamaps/dist/datamaps.world.min.js"></script>
+
             <div id="container" style="position: absolute; width: 80%; height: 100%;"></div>
-            <script>
-                var map = new Datamap({element: document.getElementById('container')});
-            </script>
+
+            <script type="text/javascript" src="../static/maps/population.js"></script>
+       
+
         </div>
         <!-- /#page-content-wrapper -->
 
@@ -71,7 +74,7 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../static/bower_components/jquery/dist/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
