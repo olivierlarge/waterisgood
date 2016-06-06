@@ -24,6 +24,10 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script type="text/javascript" src="../static/maps/population.js"></script>
+    <script type="text/javascript" src="../static/maps/water_improved.js"></script>
+
+
 </head>
 
 <body>
@@ -39,10 +43,11 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">Population</a>
+                    <a href="#" onclick="javascript:population_func();">Population</a>
                 </li>
+
                 <li>
-                    <a href="#">PIB</a>
+                    <a href="#" onclick="javascript:water_improved_func();">Accès à l'eau améliorée</a>
                 </li>
                 <li>
                     <a href="#">Overview</a>
@@ -61,12 +66,16 @@
             <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
             <script src="../static/bower_components/datamaps/dist/datamaps.world.min.js"></script>
             <div id="container" style="position: absolute; width: 80%; height: 100%;"></div>
+<<<<<<< HEAD:flask-datamap/templates/index_old.html
             <script>
                 var map = new Datamap({element: document.getElementById('container')});
             </script>
+=======
+
+>>>>>>> 65cff43eb19a8f075348748df52ba2d56b7096ee:flask-datamap/templates/index.html
         </div>
         <!-- /#page-content-wrapper -->
-
+        
     </div>
     <!-- /#wrapper -->
 
@@ -83,6 +92,22 @@
           $("#wrapper").toggleClass("toggled");
       });
     </script>
+    
+
+    <!-- FONCTIONS DES MAPS -->  
+    <script type="text/javascript">
+    function population_func(){
+        document.getElementById('container').innerHTML = "";
+        Population();
+    }
+    </script>  
+
+    <script type="text/javascript">
+        function water_improved_func(){
+        document.getElementById('container').innerHTML = "";
+         Water_improved();  
+     }
+    </script>   
 
 </body>
 
