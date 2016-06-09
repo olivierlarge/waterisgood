@@ -60,19 +60,22 @@
         name: 'Bengladesh',
         radius: 20,
         centered: 'BGD',
-        fillKey: 'classi'
+        fillKey: 'classi',
+        minitex: 'pauvreté et abondance d\'eau'
       },
       {
         name: 'Soudan',
         radius: 20,
         centered: 'ISR',
-        fillKey: 'classi'
+        fillKey: 'classi',
+        minitex: 'en Afrique'
       },
       {
         name: 'France',
         radius: 20,
         centered: 'FRA',
-        fillKey: 'classi'
+        fillKey: 'classi',
+        minitex: 'maison'
       }
     ], {
       popupTemplate: function(geo, data) {
@@ -80,8 +83,8 @@
                 if (!data) { return ; }
                 // tooltip content
                 return ['<div class="hoverinfo">',
-                    '<strong> coucou </strong>',
-                    '<br>Population: <strong> ca va ? </strong>',
+                    '<strong>', geo.name, '</strong>',
+                    '<br>', data.minitex, '</strong>',
                     '</div>'].join('');
             }
     });
