@@ -22,7 +22,7 @@ def homepage():
 @app.route('/another')
 def another():
     try:
-        return render_template("index.html")
+        return render_template("indexClickAndSlide.html")
     except Exception as e:
         return str(e)
 
