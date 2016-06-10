@@ -1,0 +1,25 @@
+{
+  "name": "FlaskApp",
+  "authors": [
+    "phagoo <phagoo0@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "static/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.1.4",
+    "d3": "~3.5.16"
+  }
+
+}

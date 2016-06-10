@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Water is Good</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../static/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../static/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="../static/maps/population.js"></script>
+    <script type="text/javascript" src="../static/maps/water_improved.js"></script>
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Water Is Good
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="javascript:population_func();">Population</a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="javascript:water_improved_func();">Accès à l'eau améliorée</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <!-- This is datamap-->
+        <div>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+            <script src="../static/bower_components/datamaps/dist/datamaps.world.min.js"></script>
+            <div id="container" style="position: absolute; width: 80%; height: 100%;"></div>
+<<<<<<< HEAD:flask-datamap/templates/index_old.html
+            <script>
+                var map = new Datamap({element: document.getElementById('container')});
+            </script>
+=======
+
+>>>>>>> 65cff43eb19a8f075348748df52ba2d56b7096ee:flask-datamap/templates/index.html
+        </div>
+        <!-- /#page-content-wrapper -->
+        
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+      $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+          $("#wrapper").toggleClass("toggled");
+      });
+    </script>
+    
+
+    <!-- FONCTIONS DES MAPS -->  
+    <script type="text/javascript">
+    function population_func(){
+        document.getElementById('container').innerHTML = "";
+        Population();
+    }
+    </script>  
+
+    <script type="text/javascript">
+        function water_improved_func(){
+        document.getElementById('container').innerHTML = "";
+         Water_improved();  
+     }
+    </script>   
+
+</body>
+
+</html>
