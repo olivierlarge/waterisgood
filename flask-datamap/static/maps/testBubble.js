@@ -89,7 +89,8 @@
             }
     });
      map.svg.selectAll('.bubbles').on('click', function() {
-        $("html, body").animate({ scrollTop: 1000 }, 1000);
+        $("html, body").animate({ scrollTop: 1500 }, 1000);
+        document.querySelector('.bangladesh').style.display = 'block';
     });
     //return map;
 
