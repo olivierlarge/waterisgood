@@ -61,21 +61,24 @@
         radius: 20,
         centered: 'BGD',
         fillKey: 'classi',
-        minitex: 'pauvreté et abondance d\'eau'
+        minitex: 'pauvreté et abondance d\'eau',
+        divname: 'bangladesh'
       },
       {
         name: 'Soudan',
         radius: 20,
         centered: 'ISR',
         fillKey: 'classi',
-        minitex: 'en Afrique'
+        minitex: 'en Afrique',
+        divname: 'soudan'
       },
       {
         name: 'France',
         radius: 20,
         centered: 'FRA',
         fillKey: 'classi',
-        minitex: 'maison'
+        minitex: 'maison',
+        divname: 'france'
       }
     ], {
       popupTemplate: function(geo, data) {
@@ -88,9 +91,16 @@
                     '</div>'].join('');
             }
     });
-     map.svg.selectAll('.bubbles').on('click', function() {
-        $("html, body").animate({ scrollTop: 1500 }, 1000);
-        document.querySelector('.bangladesh').style.display = 'block';
+     d3.selectAll(".datamaps-bubble").on('click', function(bubble) {
+
+        //Ce code display off toutes les divs de class pays
+        var divs = document.querySelectorAll(".pays");
+        [].forEach.call(divs, function(div) {
+          // do whatever
+          div.style.display = 'none';
+        });
+        document.getElementById(bubble.divname).style.display = 'block'; //Ce code affiche le nouveau graphe
+        $("html, body").animate({ scrollTop: 1500 }, 1000); // Lance l'animation de smooth scroll
     });
     //return map;
 
