@@ -10,9 +10,15 @@ from flask import send_from_directory
 
 app = Flask(__name__)
 
-
-
 @app.route('/')
+def homepage():
+    try:
+        return render_template("index.html")
+    except Exception as e:
+        return str(e)
+
+
+@app.route('/singapore')
 def homepage():
     try:
         return render_template("singapore.html")
