@@ -12,10 +12,10 @@ app = Flask(__name__)
 
 
 
-@app.route('/')
+@app.route('/singapore')
 def homepage():
     try:
-        return render_template("index.html")
+        return render_template("singapore.html")
     except Exception as e:
         return str(e)
 
