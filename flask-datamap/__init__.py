@@ -20,7 +20,7 @@ def homepage():
         return str(e)
 
 @app.route('/saopaulo')
-def homepage():
+def saopaulo():
     try:
         return render_template("saopaulo.html")
     except Exception as e:
