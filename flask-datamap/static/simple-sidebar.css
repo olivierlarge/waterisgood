@@ -123,3 +123,22 @@
         margin-right: 0;
     }
 }
+
+.scrollToTop{
+    width:200px; 
+    height:200px;
+    padding:10px; 
+    text-align:center; 
+    background: whiteSmoke;
+
+    color: #444;
+    text-decoration: none;
+    position:fixed;
+    top:20px;
+    right:40px;
+    display:none;
+    background: url('globe.png') no-repeat 0px 20px;
+}
+.scrollToTop:hover{
+    text-decoration:none;
+}

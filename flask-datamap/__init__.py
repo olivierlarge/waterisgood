@@ -20,6 +20,14 @@ def homepage():
         return str(e)
 
 
+@app.route('/saopaulo')
+def saopaulo():
+    try:
+        return render_template("saopaulo.html")
+    except Exception as e:
+        return str(e)
+
+
 @app.route('/another')
 def another():
     try:
