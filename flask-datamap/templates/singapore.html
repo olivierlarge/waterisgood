@@ -4,7 +4,84 @@
 <head>
 <script src="../static/bower_components/highcharts/highcharts.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+<script src="http://d3js.org/d3.geo.tile.v0.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+<script src="http://d3js.org/d3.geo.tile.v0.min.js"></script>
 <style>
+   body {
+        margin: 0;
+    }
+    .map {
+        position: relative;
+        overflow: hidden;
+        background-color:white;
+    }
+    .layerWater,
+    .layerRoads,
+    .layerReservoirs {
+        position: absolute;
+    }
+    .tileWater,
+    .tileRoad,
+    .tileReservoirs {
+        position: absolute;
+        width: 1200px;
+        height: 800px;
+    }
+    .tileWater path {
+        stroke: none;
+    }
+    .tileRoad path {
+        fill: none;
+        stroke: #ccb;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+    }
+    .tileRoad .major_road {
+        stroke: #776;
+    }
+    .tileRoad .minor_road {
+        stroke: #ccb;
+    }
+    .tileRoad .highway {
+        stroke: #f39;
+        stroke-width: 1.5px;
+    }
+    .tileRoad .rail {
+        stroke: #7de;
+    }
+    .info {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        font-family: sans-serif;
+    }
+    .tileWater .ocean {
+        stroke: none;
+        fill: #98c8fd;
+    }
+    .tileWater .lake {
+        fill: #c7e2ff;
+    }
+    .tileWater .reservoir{
+        fill: #c7e2ff;
+    }
+    .tileWater .riverbank,
+    .tileWater .water,
+    .tileWater .basin,
+    .tileWater .dam {
+        fill: #c7e2ff;
+    }
+
+
+
+
+
+
+
+
+
  
 .node rect {
   cursor: move;
@@ -26,6 +103,8 @@
 .link:hover {
   stroke-opacity: .5;
 }
+
+
 
 
 header {
@@ -143,28 +222,28 @@ footer {
 </div>
 
 
-
+<!-- affichage de la time series-->
 <div id="container" style = "width:60%; height:300px; left: 405px; top: 50px; position: relative;">
 <script type="text/javascript" src="../static/js/singapore/singapore.js" ></script>
-<p id="chart2" style="width: 100%;  left: 205px; top: 50px; position: relative;"></p>
-
 </div>
 
 
 
 
 
-<div id = "water_supply" style= "width:100%; height:100%; left: 205px; top: 400px; position: relative;">
+<div id = "water_supply_1" style= "width:100%; height:100%; left: 205px; top: 400px; position: relative;">
   <section style = "color:white;">
   <p></p>
   <p>Innovative <font color="lightblue">reclaimed water </font> industrial activity , the use of estuaries as <font color="lightblue">freshwater reservoirs</font>, the construction of <font color="lightblue">seawater desalination plants </font> are the solutions implemented and developed by Singapore in order to reduce the country's dependence on <font color="lightblue">water imported </font> from neighboring country, Malaysia.
   </p>
   <p>The objective for the country is to reach water self-sufficiency.</p>
-  <br />
-  <br />
-  <br />
   </section>
-  <section  id = "sec" style = "color:white;">
+</div>
+
+<div id = "water_supply_2" style= "width:100%; height:100%; left: 205px; top: 400px; position: relative;">
+  <section style = "color:white;">
+  <p></p>
+  
   <h1>Water supply</h1>
   <p></p>
   <p>The 4 taps of Singapore:</p>
@@ -178,11 +257,28 @@ footer {
   </section>
 </div>
 
-<div id="sankey_multiple" style="width: 100%;  left: 205px; top: 500px; position: relative;">
-<p id="chart" style="width: 100%;  left: 205px; top: 0px; position: relative;"></p>
+
+
+
+
+
+<div class="filter_options" style= "width:60%; height:100%; left: 1500px; top: 430px; position: relative;">
+<input class="filter_button" id="reservoir" type="checkbox" >Reservoirs and Lakes</input><br>
+<input class="filter_button" id="desalination" type="checkbox" >Desalination Plants</input><br>
+<input class="filter_button" id="reclamation" type="checkbox" >Newater cleaning plants</input><br>
+</div>
+<script type="text/javascript"  src="../static/js/singapore/singaporeV1zoom.js"></script>
+
+
+
+
+<!-- Affichage water flow diagram -->
+<div id="sankey_multiple" style="width: 100%;  left: 205px; top: 700px; position: relative;">
+<p id="chart" style="width: 100%;  left: 205px; top: 100px; position: relative;"></p>
 </div>
 
-<div id = "water_demand" style= "width:100%; height:100%; left: 205px; top: 600px; position: relative;">
+
+<div id = "water_demand" style= "width:100%; height:100%; left: 205px; top: 1000px; position: relative;">
   <section  id = "sec" style = "color:white;">
   <br />
   <br />
@@ -223,7 +319,7 @@ footer {
   </section>
 </div>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+
 <script src="../static/js/sankey.js"></script>
 <script type="text/javascript">
   
@@ -365,8 +461,13 @@ graph.links = graph.links.map(function(x) {
   }
 //});
  
+
 </script>
+</div>
+
 
 </body>
+
+
 
 </html>

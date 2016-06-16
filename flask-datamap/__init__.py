@@ -19,6 +19,7 @@ def homepage():
     except Exception as e:
         return str(e)
 
+
 @app.route('/another')
 def another():
     try:

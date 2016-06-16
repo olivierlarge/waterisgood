@@ -1,0 +1,22 @@
+Name	Latitude	Longitude	type
+MacRitchie Reservoir	1.3447621	103.82235059999994	reservoir
+Lower Peirce Reservoir	1.3700154	103.82307519999995	reservoir
+Pandan Reservoir	1.3154014	103.74339829999997	reservoir
+Lower Seletar Reservoir	1.4050778	103.84336410000003	reservoir
+Upper Peirce Reservoir	1.3677898	103.80278929999997	reservoir
+Sarimbun Reservoir	1.4254151	103.68330979999996	reservoir
+Serangoon River	1.3700709	103.89937099999997	reservoir
+Poyan/Tengeh Estuarine Reservoir	1.3768215	103.6623214	reservoir
+Upper Seletar Reservoir	1.4006464	103.79989160000002	reservoir
+Kranji Reservoir	1.4244898	103.7390537	reservoir
+Upper Seletar Reservoir	1.4006464	103.79989160000002	reservoir
+Murai Reservoir	1.4002778	103.67361110000002	reservoir
+Bedok Reservoir	1.3413025	103.92454989999999	reservoir
+Jurong Lake	1.3418479	103.72819260000006	reservoir
+Pulau Tekong Reservoir	1.415	104.0441667	reservoir
+Marina reservoir	1.2862583333333333	103.86753611111112	reservoir
+Singspring Pte Ltd	1.307312	103.62336000000005	desalination
+Changi Water Reclamation Plant	1.3161796	104.00439559999995	reclamation
+Kranji Water Reclamation Plant	1.4288515	103.75622620000001	reclamation
+Jurong Water Reclamation Plants	1.3141633	103.65641110000001	reclamation
+Ulu Pandan WRP	1.3322624	103.75619110000002	reclamation
