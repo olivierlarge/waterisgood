@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Bangladesh</title>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+</head>
+<style>
+ 
+.node rect {
+  cursor: move;
+  fill-opacity: .9;
+  shape-rendering: crispEdges;
+}
+ 
+.node text {
+  pointer-events: none;
+  text-shadow: 0 1px 0 #fff;
+}
+ 
+.link {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .2;
+}
+ 
+.link:hover {
+  stroke-opacity: .5;
+}
+
+
+header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:100px;
+    width:100%;
+    font-size: 200%;
+}
+
+#image_singapore{
+
+  padding:0px;
+}
+
+
+#menu {
+    background-color:black;
+    list-style-type: none;
+    margin: 0;
+    color: white;
+    padding: 8px 50px 8px 6px;
+    width: 6%;
+    font-size: 130%;
+    height: 100%; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+}
+
+li a {
+    display: block;
+    color: white;
+    height: : 100%;
+    width:200px;
+    color: #000;
+    float:left; 
+    padding: 8px 0 8px 26px;
+    text-decoration: none;
+    
+}
+
+/* Change the link color on hover */
+li a:hover {
+    background-color: #555;
+    color: white;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color:grey;
+  }
+
+section {
+    width:1500px;
+    float:left;
+    padding:10px;
+    font-size: 130%;
+}
+
+#container, #sliders {
+    min-width: 310px; 
+    max-width: 800px;
+    margin: 0 auto;
+}
+#container {
+    height: 400px; 
+}
+
+
+#cf {
+  position:relative;
+  height:281px;
+  width:350px;
+  left:100px;
+  top : 400px;
+  margin:0 auto;
+}
+
+#cf img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+#cf img.top:hover {
+  opacity:0;
+}
+
+</style>
+
+
+<body  link="#C0C0C0" vlink="#808080" alink="#FF0000">
+
+<ul id="menu">
+<a href="#Water_supply">Water flood</a>
+<p></p>
+<a href="#Water_demand">Water contamination</a>
+<p></p>
+<a href="#Water_cleaning">Water supply</a>
+<p></p>
+<a href="#Web_references">Web withdrawal</a>
+<p></p>
+</ul>
+
+<header>
+<h1>Bangladesh</h1>
+</header>
+ 
+<div id="image_bangladesh" style= "width: 100%; height: 80%; left: 183px;   position: relative;"> <img src="../static/img/bangladesh/Bangladesh-Wallpaper.jpg" style= "width: 100%; height:80%;" ></div>
+
+<div id = "introduction" style= "width:100%; height:100%; left: 205px; top: 50px; position: relative;">
+
+  <section  id = "sec" style = "color:white;">
+  <p>Bangladesh suffers from yearly floods and the diffusion of sea salty water in the land rivers</p>
+  <ul >
+  <li>Surface: 147 570 km2  </li>
+  <li>Population (2016 estimate): 171 700 000 </li>
+  <li>Density: 1 319/km2 </li>
+  </ul>
+  <p></p>
+  <p>By hovering your mouse on the map you can visualise the impact of floods on the landscape:</p>
+  <p></p>
+  <p></p>
+  <br />
+  </section>
+</div>
+
+<div id="cf" style= "width:100%; height:900px; left: 205px; position: relative; ">
+  <img class="bottom" src="../static/data/Bangladesh/image22_bgd.png" style= " left: 0px; "/>
+  <img class="top" src="../static/data/Bangladesh/image21_bgd.png" style= "left: 0px;"/>
+</div>
+
+
+
+<div id = "arsenic_contamination" style= "width:100%; height:100%; left: 205px; top: 450px; position: relative;">
+<section  id = "sec2" style = "color:white;">
+  <h1>Bengladesh</h1>
+  <p>Bengladesh population suffers also from ground water arsenic contamination. It is an important problem due to the use of deep tubewells for water supply in the Ganges Delta, causing serious arsenic poisoning to large numbers of people. </p>
+  <br />
+</section>
+</div>
+
+<script src="../static/js/bangladesh/bgd_arsenic_3DChart.js"></script>
+<div id="container" style = " top:600px; position: relative;"></div>
+<div id="sliders" style = " top: 250px; color:white; position: relative;">
+    <table>
+        <tr>
+          <td>Alpha Angle</td>
+          <td><input id="alpha" type="range" min="0" max="45" value="15"/> <span id="alpha-value" class="value"></span></td>
+        </tr>
+        <tr>
+          <td>Beta Angle</td>
+          <td><input id="beta" type="range" min="-45" max="45" value="15"/> <span id="beta-value" class="value"></span></td>
+        </tr>
+        <tr>
+          <td>Depth</td>
+          <td><input id="depth" type="range" min="20" max="100" value="50"/> <span id="depth-value" class="value"></span></td>
+        </tr>
+    </table>
+</div>
+
+
+
+</body>
+</html>
