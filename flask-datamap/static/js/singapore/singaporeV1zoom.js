@@ -179,7 +179,7 @@ function zoomed() {
   if (reservoirs) {
  
     var myData = null;
-    d3.tsv("../static/data/Singapore_water_treatment_infrastructures_final.txt")
+    d3.tsv("../static/data/Singapore/Singapore_water_treatment_infrastructures_final.txt")
       .row(function (d,i) {
         return {
           ReservoirName: d.Name,
