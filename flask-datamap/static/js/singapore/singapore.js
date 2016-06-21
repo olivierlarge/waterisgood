@@ -2,7 +2,7 @@ $(document).ready(function() {
         var dataArray_zoomtemp = [[Date.UTC(1901,1,1),158.841666667], [Date.UTC(1911,1,1),177.01], [Date.UTC(1921,1,1),199.258333333], [Date.UTC(1931,1,1),201.170833333], [Date.UTC(1941,1,1),179.9875], [Date.UTC(1951,1,1),208.315833333], [Date.UTC(1961,1,1),188.4], [Date.UTC(1971,1,1),175.5475], [Date.UTC(1981,1,1),174.6575], [Date.UTC(1991,1,1),189.261666667], [Date.UTC(2001,1,1),205.495], [Date.UTC(2011,1,1),202.73125]];
 		var options = {
 			chart: {
-				renderTo: 'container'
+				renderTo: 'myhighchartsSingapore'
 				
 			},
 			title: {

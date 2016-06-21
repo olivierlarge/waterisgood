@@ -21,7 +21,7 @@ def bangladesh():
 @app.route('/singapore')
 def singapore():
     try:
-        return render_template("singapore.html")
+        return render_template("singapore2.html")
     except Exception as e:
         return str(e)
 

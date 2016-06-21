@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+	<script src="http://d3js.org/d3.geo.tile.v0.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+	<script src="http://d3js.org/d3.geo.tile.v0.min.js"></script>
+
+	<title>WiG - Singapore</title>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="../static/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="../static/simple-sidebar.css" rel="stylesheet">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<style>
+	.map {
+        position: relative;
+        overflow: hidden;
+        background-color:white;
+    }
+    .layerWater,
+    .layerRoads,
+    .layerReservoirs {
+        position: absolute;
+    }
+    .tileWater,
+    .tileRoad,
+    .tileReservoirs {
+        position: absolute;
+        width: 1200px;
+        height: 800px;
+    }
+    .tileWater path {
+        stroke: none;
+    }
+    .tileRoad path {
+        fill: none;
+        stroke: #ccb;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+    }
+    .tileRoad .major_road {
+        stroke: #776;
+    }
+    .tileRoad .minor_road {
+        stroke: #ccb;
+    }
+    .tileRoad .highway {
+        stroke: #f39;
+        stroke-width: 1.5px;
+    }
+    .tileRoad .rail {
+        stroke: #7de;
+    }
+    .info {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        font-family: sans-serif;
+    }
+    .tileWater .ocean {
+        stroke: none;
+        fill: #98c8fd;
+    }
+    .tileWater .lake {
+        fill: #c7e2ff;
+    }
+    .tileWater .reservoir{
+        fill: #c7e2ff;
+    }
+    .tileWater .riverbank,
+    .tileWater .water,
+    .tileWater .basin,
+    .tileWater .dam {
+        fill: #c7e2ff;
+    }
+
+
+
+
+
+
+
+
+
+ 
+.node rect {
+  cursor: move;
+  fill-opacity: .9;
+  shape-rendering: crispEdges;
+}
+ 
+.node text {
+  pointer-events: none;
+  text-shadow: 0 1px 0 #fff;
+}
+ 
+.link {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .2;
+}
+ 
+.link:hover {
+  stroke-opacity: .5;
+}
+
+		body {
+			margin: 0;
+			padding: 0;
+			background-color:white;
+		  }
+
+		#big_title {
+			/*background-color:#e7fffe;*/
+			color:#4e4949;
+			text-align:center;
+			padding:100px;
+			width:100%;
+			font-size: 200%;
+		}
+
+		#image_title {
+			width: 100%;
+			height: 600px;
+			background-image: url('../static/img/singapore/singapore_image.png');
+			background-size: 100% 100%;
+			border: 1px black;
+		}
+
+		#section1 {
+			height: 100%;
+		    text-align: center;
+		    background: #d7eced;
+		}
+		#section2 {
+			height: 100%;
+		    padding-top: 150px;
+		    background: white;
+		}
+		#section3 {
+			height: 100%;
+		    padding-top: 150px;
+		    background: #d7eced;
+		}
+		#section4 {
+			height: 100%;
+		    padding-top: 150px;
+		    background: white;
+		}
+		#section5 {
+			height: 100%;
+		    padding-top: 150px;
+		    background: #d7eced;
+		}
+
+		p{
+			font-family: Bedrock;
+			font-size:150%;
+		}
+
+
+	</style>
+</head>
+
+<body>
+
+	<div id="wrapper">
+
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-nav">
+				<li class="sidebar-brand">
+					<a href="another">
+						Back to Map
+					</a>
+				</li>
+				<li>
+					<a class="page-scroll" href="#section1">Singapore</a>
+				</li>
+				<li>
+					<a class="page-scroll" href="#section2">Introduction</a>
+				</li>
+				<li>
+					<a class="page-scroll" href="#section3">Water supply</a>
+				</li>
+				<li>
+					<a class="page-scroll" href="#section4">Water demand</a>
+				</li>
+				<li>
+					<a class="page-scroll" href="#section5">Water cleaning</a>
+				</li>
+				<li>
+					<a class="page-scroll" href="#section6">Web References</a>
+				</li>
+			</ul>
+		</div>
+
+
+
+		<div id="page-content-wrapper">
+
+			<!-- Section 1 : Titre -->
+			<section class="container-fluid" id="section1">
+				<div id="image_title"></div>
+				<div id="big_title">
+					<h1><font face="Bedrock" size="10"><b> Singapore Island </b></font></h1><br/><br/><br/>
+				</div>
+			</section>	
+
+			<!-- Section 2 : A mega city-->
+			<section class="container-fluid" id="section2">
+				<h1>Singapore in a nutshell ...</h1>
+				<p>Singapore faces the challenging environment of a densely populated island.</p>
+
+				<ul >
+				<li>Surface:  719.1 km2</li>
+				<li>Population (2015 estimate):  5 535 000 </li>
+				<li>Density:  7 697/km2</li>
+				</ul>
+				<p></p>
+
+
+				<p>By end of June 2012, the island's population stood at 5.31 million. It is the second densest sovereign state in the world, after the microstate Monaco.</p>
+				<p>Singapore is a water-scarce country not because of lack of rainfall (2,400 millimetres/year), but because of the limited amount of land area where rainfall can be stored.</p>
+				<p></p>
+				<p></p>
+				<div id="myhighchartsSingapore" style = "width:100%; height:300px; top: 50px; padding-top: 20px;"></div>
+				<br />
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			</section>
+
+			<!-- Section 3 : The major drought of 2015 -->
+			<section class="container-fluid" id="section3">
+			<h1>Water supply</h1>
+				<p></p>
+			  <p>Innovative <font color="lightblue">reclaimed water </font> industrial activity , the use of estuaries as <font color="lightblue">freshwater reservoirs</font>, the construction of <font color="lightblue">seawater desalination plants </font> are the solutions implemented and developed by Singapore in order to reduce the country's dependence on <font color="lightblue">water imported </font> from neighboring country, Malaysia.
+			  </p>
+			  <p>The objective for the country is to reach water self-sufficiency.</p>
+
+			  <p></p>
+				<p>The 4 taps of Singapore:</p>
+				<ul >
+				<li>Reclaimed water (Newater, 520 000 m3 per day)</li>
+				<li>Desalinated water  (up to 230,000 m3 per day)</li>
+				<li>Malaysia imported water (up to 1 100 000 m3 per day)</li>
+				<li>Reservoirs (up to 1 100 000 m3 per day, depending on rainfall)</li>
+				</ul>
+				<br/><br/>
+				<div class="filter_options" style= "width:60%; height:100%;">
+				<input class="filter_button" id="reservoir" type="checkbox" >Reservoirs and Lakes</input><br>
+				<input class="filter_button" id="desalination" type="checkbox" >Desalination Plants</input><br>
+				<input class="filter_button" id="reclamation" type="checkbox" >Newater cleaning plants</input><br>
+				</div>
+				<div id="singaporemap" class="map"></div>
+				<script type="text/javascript"  src="../static/js/singapore/singaporeV1zoom.js"></script>
+
+
+
+<br/><br/><br/><br/><br/><br/><br/>
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			</section>
+
+			<!-- Section 4 : No lesson learned -->
+			<section class="container-fluid" id="section4">
+				<h1>Water demand</h1>
+				<p></p>
+				<p>Population:</p>
+				<p>2011: 1,700,000 m3 per day </p>
+				<P>2007: population consumption about 1.36 billion litres of water per day</P>
+				<br />
+				<p>Industry:</p>
+				<p></p>
+				<p>Not only must they be supplied with drinking water but there is huge need for industrial water to supply the manufacturing industry, which makes up about a quarter of gross domestic product.</p>
+				<p>Water demand in Singapore is about 400 gallons a day, with homes consuming 45% and the non domestic sector taking the rest. By 2060, total demand could almost double, according to the PUB. The non-domestic sector coumd account for about 70% of that.</p>	
+				<div id="sankey_multiple" style="width: 100%;">
+					<p id="chart" style="width: 100%;  left: 205px; top: 100px; position: relative;"></p>
+				</div>
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			</section>
+
+			<!-- Section 5 : Conclusion -->
+			<section class="container-fluid" id="section5">
+				<h1>Water cleaning</h1>
+				<p></p>
+				<p>PUB decided to collect, treat and reuse used water on an extensive scale, a step that very few countries have taken.</p>
+				<p>Singapore is 100% sewered to collect all used water. It has constructed separate drainage and sewerage systems to facilitate used water reuse on an extensive scale.</p> 
+				<p>From 2002 to 2004, the amount of treated wastewater increased from 1.315 to 1.369 million m3/day.</p><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			</section>
+
+			<section class="container-fluid" id="section6">
+				<h1>Web references</h1>
+
+				<p></p>
+				<a href ="http://www.ft.com/intl/cms/s/2/beea8628-a518-11e3-8988-00144feab7de.html#axzz4BDOOgzfZ"> Singapore seeks sustainable water supply</a>
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			</section>
+		</div>
+	</div>	
+	
+
+	
+	<script src="../static/bower_components/jquery/dist/jquery.js"></script>
+	<script src="../static/js/jquery.easing.min.js"></script>
+	<script src="../static/bower_components/highcharts/highcharts.js"></script>
+    <script src="../static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<script src="../static/js/smoothscroll.js"></script>
+	<script type="text/javascript" src="../static/js/singapore/singapore.js" ></script>
+	<script type="text/javascript" src="../static/js/singapore/sankey.js"></script>
+	<script type="text/javascript" src="../static/js/singapore/singaporeflow.js"></script>
+	
+
+</body>
+
+</html>

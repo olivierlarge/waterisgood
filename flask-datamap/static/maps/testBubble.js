@@ -57,28 +57,28 @@
     });
     map.bubbles([
       {
-        name: 'Bengladesh',
+        name: 'Bangladesh',
         radius: 20,
         centered: 'BGD',
         fillKey: 'classi',
-        minitex: 'pauvreté et abondance d\'eau',
+        minitex: 'Poverty and floods',
         divname: 'bangladesh'
       },
       {
-        name: 'Soudan',
+        name: 'SaoPaulo',
         radius: 20,
-        centered: 'ISR',
+        centered: 'BRA',
         fillKey: 'classi',
-        minitex: 'en Afrique',
-        divname: 'soudan'
+        minitex: 'A megacity without water',
+        divname: 'saopaulo'
       },
       {
-        name: 'France',
+        name: 'Singapore',
         radius: 20,
-        centered: 'FRA',
+        centered: 'MYS',
         fillKey: 'classi',
-        minitex: 'maison',
-        divname: 'france'
+        minitex: 'High population density island',
+        divname: 'singapore'
       }
     ], {
       popupTemplate: function(geo, data) {
