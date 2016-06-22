@@ -52,10 +52,8 @@ var layerReservoirs = map.append("div")
 //    .style("top", "200px")
 //    .style("left", "200px")
     .call(d3.behavior.zoom()
-      .on("zoom", function () {
-                    layerReservoirs.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")
-                    }))
-    .append("g")
+      .on("zoom", function () {layerReservoirs.attr("transform", "translate(" + d3.event.translate + ")" + " scale(" + d3.event.scale + ")")}))
+    .append("g");
 
 
 
