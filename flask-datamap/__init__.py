@@ -32,6 +32,13 @@ def saopaulo():
     except Exception as e:
         return str(e)
 
+@app.route('/israel')
+def israel():
+    try:
+        return render_template("israel.html")
+    except Exception as e:
+        return str(e)
+
 
 @app.route('/another')
 def another():

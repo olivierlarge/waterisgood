@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+	<script src="http://d3js.org/d3.geo.tile.v0.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+	<script src="http://d3js.org/d3.geo.tile.v0.min.js"></script>
+
+	<title>WiG - Israel</title>
+
+	<!-- Bootstrap Core CSS -->
+	<link href="../static/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="../static/simple-sidebar.css" rel="stylesheet">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<style>
+
+ 
+.node rect {
+  cursor: move;
+  fill-opacity: .9;
+  shape-rendering: crispEdges;
+}
+ 
+.node text {
+  pointer-events: none;
+  text-shadow: 0 1px 0 #fff;
+}
+ 
+.link {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .2;
+}
+ 
+.link:hover {
+  stroke-opacity: .5;
+}
+
+
+
+li {
+
+    font-family: Bedrock;
+	font-size:150%;
+    
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color:white;
+  }
+
+#big_title {
+	/*background-color:#e7fffe;*/
+	color:#4e4949;
+	text-align:center;
+	padding:100px;
+	width:100%;
+	font-size: 200%;
+}
+
+#image_title {
+	width: 100%;
+	height: 600px;
+	background-image: url('../static/img/israel/israel.jpg');
+	background-size: 100% 100%;
+	border: 1px black;
+}
+
+#section1 {
+	height: 100%;
+    text-align: center;
+    background: #d7eced;
+}
+#section2 {
+	height: 100%;
+    padding-top: 50px;
+    background: white;
+}
+#section3 {
+	height: 100%;
+    padding-top: 50px;
+    background: #d7eced;
+}
+#section4 {
+	height: 100%;
+    padding-top: 50px;
+    background: white;
+}
+#section5 {
+	height: 100%;
+    padding-top: 50px;
+    background: #d7eced;
+}
+
+p {
+	font-family: Bedrock;
+	font-size:150%;
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+	<div id="wrapper">
+
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-nav">
+				<li class="sidebar-brand">
+					<a href="another">
+						Back to Map
+					</a>
+				</li>
+				<li>
+					<a class="page-scroll" href="#section1">Israel</a>
+				</li>
+				<li>
+					<a class="page-scroll" href="#section2">Introduction</a>
+				</li>
+				<li>
+					<a class="page-scroll" href="#section3">Water supply</a>
+				</li>
+				<li>
+					<a class="page-scroll" href="#section4">Water demand</a>
+				</li>
+				<li>
+					<a class="page-scroll" href="#section5">Water cleaning</a>
+				</li>
+				<li>
+					<a class="page-scroll" href="#section6">Web References</a>
+				</li>
+			</ul>
+		</div>
+
+
+
+		<div id="page-content-wrapper">
+
+			<!-- Section 1 : Titre -->
+			<section class="container-fluid" id="section1">
+				<div id="image_title"></div>
+				<div id="big_title">
+					<h1><font face="Bedrock" size="10"><b> Israel </b></font></h1><br/><br/><br/>
+				</div>
+			</section>	
+
+			<!-- Section 2 : A mega city-->
+			<section class="container-fluid" id="section2">
+				<h1>Israel situation regarding water</h1>
+
+
+
+				<p>Historic of rainfall:</p>
+				
+				<p></p>
+				<p></p>
+				<div id="myhighchartsIsrael" style = "width:100%; height:300px; top: 50px; padding-top: 20px;"></div>
+				<br />
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			</section>
+
+			<!-- Section 3 : The major drought of 2015 -->
+			<section class="container-fluid" id="section3">
+			<h1>Water supply</h1>
+				<p></p>
+			 
+
+
+<br/><br/><br/><br/><br/><br/><br/>
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			</section>
+
+			<!-- Section 4 : No lesson learned -->
+			<section class="container-fluid" id="section4">
+				<h1>Water demand</h1>
+
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			</section>
+
+			<!-- Section 5 : Conclusion -->
+			<section class="container-fluid" id="section5">
+				<h1>Water cleaning</h1>
+			<br/><br/><br/>
+			</section>
+
+			<section class="container-fluid" id="section6">
+				<h1>Web references</h1>
+
+				<p></p>
+		
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			</section>
+		</div>
+	</div>	
+	
+
+	
+	<script src="../static/bower_components/jquery/dist/jquery.js"></script>
+	<script src="../static/js/jquery.easing.min.js"></script>
+	<script src="../static/bower_components/highcharts/highcharts.js"></script>
+    <script src="../static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<script src="../static/js/smoothscroll.js"></script>
+	<script type="text/javascript" src="../static/js/israel/israel.js" ></script>
+
+	
+
+</body>
+
+</html>
