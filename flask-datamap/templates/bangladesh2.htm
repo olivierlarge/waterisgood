@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+  <script src="http://d3js.org/d3.geo.tile.v0.min.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  
+  <script src="../static/bower_components/jquery/dist/jquery.js"></script>
+  <script src="../static/js/jquery.easing.min.js"></script>
+  <script src="../static/bower_components/highcharts/highcharts.js"></script>
+  <script src="../static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script src="../static/js/smoothscroll.js"></script>
+  <script type="text/javascript" src="../static/js/bangladesh/bangladesh.js" ></script>
+
+
+  <title>WiG - Bangladesh</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="../static/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="../static/simple-sidebar.css" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <style>
+
+ 
+.node rect {
+  cursor: move;
+  fill-opacity: .9;
+  shape-rendering: crispEdges;
+}
+ 
+.node text {
+  pointer-events: none;
+  text-shadow: 0 1px 0 #fff;
+}
+ 
+.link {
+  fill: none;
+  stroke: #000;
+  stroke-opacity: .2;
+}
+ 
+.link:hover {
+  stroke-opacity: .5;
+}
+
+
+
+li {
+
+    font-family: Bedrock;
+  font-size:150%;
+    
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color:white;
+  }
+
+#big_title {
+  /*background-color:#e7fffe;*/
+  color:#4e4949;
+  text-align:center;
+  padding:100px;
+  width:100%;
+  font-size: 200%;
+}
+
+#image_title {
+  width: 100%;
+  height: 600px;
+  background-image: url('../static/img/bangladesh/bangladesh.jpg');
+  background-size: 100% 100%;
+  border: 1px black;
+}
+
+#section1 {
+  height: 100%;
+    text-align: center;
+    background: #d7eced;
+}
+#section2 {
+  height: 100%;
+    padding-top: 50px;
+    background: white;
+}
+#section3 {
+  height: 100%;
+    padding-top: 0px;
+    background: #d7eced;
+}
+#section4 {
+  height: 100%;
+    padding-top: 50px;
+    background: white;
+}
+#section5 {
+  height: 100%;
+    padding-top: 50px;
+    background: #d7eced;
+}
+
+p {
+  font-family: Bedrock;
+  font-size:150%;
+}
+
+#container, #sliders {
+    min-width: 310px; 
+    max-width: 800px;
+    margin: 0 auto;
+}
+#container {
+    height: 400px; 
+}
+
+
+#cf {
+  position:relative;
+  height:281px;
+  width:350px;
+  left:100px;
+  top : 50px;
+  margin:0 auto;
+}
+
+#cf img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+#cf img.top:hover {
+  opacity:0;
+}
+</style>
+
+</head>
+
+
+
+<body>
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+          <a href="another">
+            Back to Map
+          </a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#section1">Bangladesh</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#section2">Introduction</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#section3">Floods</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#section4">Water supply</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#section5">Arsenic contamination</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#section6">Web References</a>
+        </li>
+      </ul>
+    </div>
+
+
+
+  <div id="page-content-wrapper">
+
+      <!-- Section 1 : Titre -->
+      <section class="container-fluid" id="section1">
+        <div id="image_title"></div>
+        <div id="big_title">
+          <h1><font face="Bedrock" size="10"><b> Bangladesh </b></font></h1><br/><br/><br/>
+        </div>
+      </section>  
+
+      <!-- Section 2 : A mega city-->
+      <section class="container-fluid" id="section2">
+        <h1>Bangladesh caracteristics</h1>
+
+          <ul >
+          <li>Surface: 147 570 km2  </li>
+          <li>Population (2016 estimate): 171 700 000 </li>
+          <li>Density: 1 319/km2 </li>
+          </ul>
+
+          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      </section>
+
+
+      <!-- Section 3 : A mega city-->
+      <section class="container-fluid" id="section3">
+        <h1>Floods</h1>
+          <p>Bangladesh suffers from yearly floods and the diffusion of sea salty water in the land rivers</p>
+          <p></p>
+          <p>By hovering your mouse on the map you can visualise the impact of floods on the landscape:</p>
+          <p></p>
+          <div id="cf" style= "width:100%; height:900px; left: 205px; position: relative; ">
+          <img class="bottom" src="../static/data/Bangladesh/image22_bgd.png" style= " left: 0px; "/>
+          <img class="top" src="../static/data/Bangladesh/image21_bgd.png" style= "left: 0px;"/>
+          </div>
+          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+      </section>
+
+
+
+      <!-- Section 4 : The major drought of 2015 -->
+      <section class="container-fluid" id="section4">
+          <h1>Water supply</h1>
+          <p>Historic of rainfall:</p>        
+          <p></p>
+          <p></p>
+          <div id="myhighchartsBangladesh" style = "width:100%; height:300px; top: 50px; padding-top: 20px;"></div>
+          <br /><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>      
+      </section>
+
+
+
+      <!-- Section 5 : No lesson learned -->
+      <section class="container-fluid" id="section5">
+          <h1>Arsenic contamination</h1>
+          <p>Bengladesh population suffers also from ground water arsenic contamination. It is an important problem due to the use of deep tubewells for water supply in the Ganges Delta, causing serious arsenic poisoning to large numbers of people. </p>
+          <br />
+     
+
+          <script src="../static/js/bangladesh/bgd_arsenic_3DChart.js"></script>
+          <div id="container" style = " top:60px; position: relative;"></div>         
+          <div id="sliders" style = " top: 100px; color:white; position: relative;">
+
+              <table>
+                  <tr>
+                    <td>Alpha Angle</td>
+                    <td><input id="alpha" type="range" min="0" max="45" value="15"/> <span id="alpha-value" class="value"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Beta Angle</td>
+                    <td><input id="beta" type="range" min="-45" max="45" value="15"/> <span id="beta-value" class="value"></span></td>
+                  </tr>
+                  <tr>
+                    <td>Depth</td>
+                    <td><input id="depth" type="range" min="20" max="100" value="50"/> <span id="depth-value" class="value"></span></td>
+                  </tr>
+              </table>
+          </div>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+      </section>
+    </div>
+  </div>  
+  
+
+
+
+  
+
+</body>
+
+</html>

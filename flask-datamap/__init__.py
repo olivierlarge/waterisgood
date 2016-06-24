@@ -13,7 +13,7 @@ app = Flask(__name__)
 @app.route('/bangladesh')
 def bangladesh():
     try:
-        return render_template("bangladesh.htm")
+        return render_template("bangladesh2.htm")
     except Exception as e:
         return str(e)
 
