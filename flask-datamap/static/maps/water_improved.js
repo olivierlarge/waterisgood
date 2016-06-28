@@ -30,7 +30,7 @@
         dataset[iso] = { numberOfThings: value, fillColor: paletteScale(value) };
     });
     // render map
-    new Datamap({
+    var map = new Datamap({
         element: document.getElementById('container'),
         projection: 'mercator', // big world map
         // countries don't listed in dataset will be painted with this color
@@ -56,6 +56,61 @@
                     '</div>'].join('');
             }
         }
+    });
+    map.bubbles([
+      {
+        name: 'Bangladesh',
+        radius: 20,
+        centered: 'BGD',
+        fillKey: 'classi',
+        minitex: 'Poverty and floods',
+        divname: 'bangladesh'
+      },
+      {
+        name: 'SaoPaulo',
+        radius: 20,
+        centered: 'BRA',
+        fillKey: 'classi',
+        minitex: 'A megacity without water',
+        divname: 'saopaulo'
+      },
+      {
+        name: 'Singapore',
+        radius: 20,
+        centered: 'MYS',
+        fillKey: 'classi',
+        minitex: 'High population density island',
+        divname: 'singapore'
+      },
+      {
+        name: 'Israel',
+        radius: 20,
+        centered: 'ISR',
+        fillKey: 'classi',
+        minitex: 'Water as a source of tenses',
+        divname: 'israel'
+      }
+    ], {
+      popupTemplate: function(geo, data) {
+                // don't show tooltip if country don't present in dataset
+                if (!data) { return ; }
+                // tooltip content
+                return ['<div class="hoverinfo">',
+                    '<strong>', geo.name, '</strong>',
+                    '<br>', data.minitex, '</strong>',
+                    '</div>'].join('');
+            }
+    });
+     d3.selectAll(".datamaps-bubble").on('click', function(bubble) {
+        console.log("hi ", document.getElementById(bubble.divname));
+        //Ce code display off toutes les divs de class pays
+        //var divs = document.querySelectorAll(".pays");
+        //[].forEach.call(divs, function(div) {
+          // do whatever
+         // div.style.display = 'none';
+        //});
+        //document.getElementById(bubble.divname).style.display = 'block'; //Ce code affiche le nouveau graphe
+        //$("html, body").animate({ scrollTop: 1500 }, 1000); // Lance l'animation de smooth scroll
     });
 
 }

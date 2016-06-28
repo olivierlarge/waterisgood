@@ -79,6 +79,14 @@
         fillKey: 'classi',
         minitex: 'High population density island',
         divname: 'singapore'
+      },
+      {
+        name: 'Israel',
+        radius: 20,
+        centered: 'ISR',
+        fillKey: 'classi',
+        minitex: 'Water as a source of tenses',
+        divname: 'israel'
       }
     ], {
       popupTemplate: function(geo, data) {
@@ -92,15 +100,15 @@
             }
     });
      d3.selectAll(".datamaps-bubble").on('click', function(bubble) {
-
+        console.log("hi ", document.getElementById(bubble.divname));
         //Ce code display off toutes les divs de class pays
-        var divs = document.querySelectorAll(".pays");
-        [].forEach.call(divs, function(div) {
+        //var divs = document.querySelectorAll(".pays");
+        //[].forEach.call(divs, function(div) {
           // do whatever
-          div.style.display = 'none';
-        });
-        document.getElementById(bubble.divname).style.display = 'block'; //Ce code affiche le nouveau graphe
-        $("html, body").animate({ scrollTop: 1500 }, 1000); // Lance l'animation de smooth scroll
+         // div.style.display = 'none';
+        //});
+        //document.getElementById(bubble.divname).style.display = 'block'; //Ce code affiche le nouveau graphe
+        //$("html, body").animate({ scrollTop: 1500 }, 1000); // Lance l'animation de smooth scroll
     });
     //return map;
 
