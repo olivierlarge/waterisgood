@@ -9,7 +9,8 @@ var width = 1290,//Math.max(960, window.innerWidth),
     prefix = prefixMatch(["webkit", "ms", "Moz", "O"]);
 
 var tile = d3.geo.tile()
-    .size([width, height]);p
+    .size([width, height]);
+    
 var projection = d3.geo.mercator()
     .scale((1 << 21) / 6 / Math.PI)
     .translate([-width / 2, -height / 2]); // just temporary
@@ -32,7 +33,7 @@ var map = d3.select("#singaporemap")
 //    .style("left", "400px")
     .style("background-color","white")
     .call(zoom)
-    .on("mousemove", mousemoved);
+    //.on("mousemove", mousemoved);
 
 
 
@@ -76,7 +77,7 @@ function zoomed() {
 
   projection
       .scale(zoom.scale() / 2 / Math.PI)
-      .translate(zoom.translate());
+      //.translate(zoom.translate());
 
 
 
@@ -110,7 +111,7 @@ function zoomed() {
 
               tilePath.projection()
                   .translate([k / 2 - d[0] * 256, k / 2 - d[1] * 256]) // [0°,0°] in pixels
-              .scale(k / 2 / Math.PI);
+                  .scale(k / 2 / Math.PI);
 
               svg.selectAll("path")
                   .data(json.features.sort(function (a, b) {
@@ -157,7 +158,7 @@ function zoomed() {
 
               tilePath.projection()
                   .translate([k / 2 - d[0] * 256, k / 2 - d[1] * 256]) // [0°,0°] in pixels
-              .scale(k / 2 / Math.PI);
+                  .scale(k / 2 / Math.PI);
 
               svg.selectAll("path")
                   .data(json.features.sort(function (a, b) {
