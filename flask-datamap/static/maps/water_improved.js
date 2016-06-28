@@ -34,7 +34,7 @@
         element: document.getElementById('container'),
         projection: 'mercator', // big world map
         // countries don't listed in dataset will be painted with this color
-        fills: { defaultFill: '#F5F5F5' },
+        fills: { defaultFill: '#F5F5F5' , classi: 'orange' },
         data: dataset,
         geographyConfig: {
             borderColor: '#DEDEDE',
