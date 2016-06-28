@@ -102,15 +102,8 @@
             }
     });
      d3.selectAll(".datamaps-bubble").on('click', function(bubble) {
-        console.log("hi ", document.getElementById(bubble.divname));
-        //Ce code display off toutes les divs de class pays
-        //var divs = document.querySelectorAll(".pays");
-        //[].forEach.call(divs, function(div) {
-          // do whatever
-         // div.style.display = 'none';
-        //});
-        //document.getElementById(bubble.divname).style.display = 'block'; //Ce code affiche le nouveau graphe
-        //$("html, body").animate({ scrollTop: 1500 }, 1000); // Lance l'animation de smooth scroll
+        //console.log("hi ", bubble.divname);
+        document.location.href = "/" + bubble.divname;
     });
 
 }
