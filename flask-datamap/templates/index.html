@@ -11,11 +11,43 @@
 
     <title>Water is Good</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="../static/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Bootstrap Core CSS -->
+    <!--
+    <link href="../static/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    -->
     <!-- Custom CSS -->
+    
     <link href="../static/simple-sidebar.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script>
+      $(function() {  
+          var select = $( "#minbeds" );
+          var slider = $( "<div id='slider'></div>" ).insertAfter( select ).slider({
+            min: 1,
+            max: 5,
+            range: "min",
+            value: select[ 0 ].selectedIndex + 1,
+            slide: function( event, ui) {
+              select[ 0 ].selectedIndex = ui.value - 1;
+              var e = document.getElementById("minbeds");
+              var value = e.options[e.selectedIndex].value;
+              population_func(value);
+
+            }
+          });
+          $( "#minbeds" ).change(function() {
+            slider.slider( "value", this.selectedIndex + 1 );
+            var e = document.getElementById("minbeds");
+            var value = e.options[e.selectedIndex].value;
+            population_func(value);
+          });
+        });
+    </script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -24,13 +56,54 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
     <script type="text/javascript" src="../static/maps/population.js"></script>
     <script type="text/javascript" src="../static/maps/water_improved.js"></script>
     
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+    <script src="../static/bower_components/datamaps/dist/datamaps.world.min.js"></script>
+
+    
+    <style> 
+
+
+      #titre{
+          padding:10px;
+          height:50px;
+          width:90%;
+          text-align: center;
+          font-size:x-large;
+          font-weight: bold;
+          font-family : Impact;
+          color : "#0000FF";
+          margin-left: 30px;
+      }
+
+      #container{
+        width:90%;
+        height:680px;
+        margin-left: 30px;
+      }
+
+      #slider{
+          width:90%;
+          height:10%;
+          margin-left: 30px;
+      }
+
+      #reservation{
+        margin-left: 30px;
+        width:90%;
+        font-weight: bold;
+      }
+
+    </style>
 
 </head>
 
-<body onload=population_func()>
+<body onload=population_func(2015)>
+
 
     <div id="wrapper">
 
@@ -43,7 +116,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" onclick="javascript:population_func();">Population</a>
+                    <a href="#" onclick="javascript:population_func(2015);">Population</a>
                 </li>
                 <li>
                     <a href="#" onclick="javascript:water_improved_func();">Accès à l'eau améliorée</a>
@@ -55,26 +128,40 @@
         <!-- Page Content -->
         <!-- This is datamap-->
         <div>
-            
-            <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-            <script src="../static/bower_components/datamaps/dist/datamaps.world.min.js"></script>
 
-            <div id="container" style= "position:absolute;width:80%; height:90%;"></div> 
-            <script>
-                var map = new Datamap({element: document.getElementById('container')});
-            </script>   
+            <div id="titre"> LE TITRE </div>
             
+            <div id="container"></div> 
+            
+<form id="reservation">
+  <label for="minbeds">Année Selectionnée</label>
+  <select name="minbeds" id="minbeds">
+    <option value=1990>1990</option>
+    <option value=1995>1995</option>
+    <option value=2000>2000</option>
+    <option value=2010>2010</option>
+    <option value=2015>2015</option>
+  </select>
+
+</form>
+        </div> 
+
        
     <!-- /#wrapper -->
 
+    </div>
+
+
     <!-- jQuery -->
+    <!--
     <script src="../static/bower_components/jquery/dist/jquery.js"></script>
-
+-->
     <!-- Bootstrap Core JavaScript -->
+    <!--
     <script src="../static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
+    -->
     <!-- Menu Toggle Script -->
+
     <script>
       $("#menu-toggle").click(function(e) {
           e.preventDefault();
@@ -82,21 +169,24 @@
       });
     </script>
 
-    +
+    
      <!-- FONCTIONS DES MAPS -->  
+   
+
      <script type="text/javascript">
-     function population_func(){
+     function population_func(annee){
          document.getElementById('container').innerHTML = "";
-         Population();
+         Population(annee);
      }
      </script>  
- 
+
      <script type="text/javascript">
          function water_improved_func(){
          document.getElementById('container').innerHTML = "";
           Water_improved();  
       }
      </script> 
+
 
 </body>
 
