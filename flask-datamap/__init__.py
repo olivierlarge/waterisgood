@@ -10,6 +10,14 @@ from flask import send_from_directory
 
 app = Flask(__name__)
 
+@app.route('/introduction_kpe')
+def introduction():
+    try:
+        return render_template("introduction.html")
+    except Exception as e:
+        return str(e)
+
+
 @app.route('/bangladesh')
 def bangladesh():
     try:
