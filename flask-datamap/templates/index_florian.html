@@ -31,33 +31,20 @@
             min: 1,
             max: 3,
             range: "min",
-            value: 2015,
+            value: select[ 0 ].selectedIndex + 1,
             slide: function( event, ui) {
               select[ 0 ].selectedIndex = ui.value - 1;
               var e = document.getElementById("minbeds");
               var value = e.options[e.selectedIndex].value;
+              population_func(value);
 
-              if (document.getElementById('titre').innerHTML == "Populations"){
-                  population_func(value);
-                }
-
-              else if(document.getElementById('titre').innerHTML == "Ratios d'accès à l'eau améliorée"){
-                  water_improved_func(value);
-                  }
             }
           });
-
           $( "#minbeds" ).change(function() {
             slider.slider( "value", this.selectedIndex + 1 );
             var e = document.getElementById("minbeds");
             var value = e.options[e.selectedIndex].value;
-            if (document.getElementById('container').innerHTML == "Populations"){
-                  population_func(value);
-                }
-
-              else if(document.getElementById('container').innerHTML == "Ratios d'accès à l'eau améliorée"){
-                  water_improved_func(value);
-                  }
+            population_func(value);
           });
         });
     </script>
@@ -79,6 +66,7 @@
 
     
     <style> 
+
 
       #titre{
           padding:10px;
@@ -131,7 +119,7 @@
                     <a href="#" onclick="javascript:population_func(2015);">Population</a>
                 </li>
                 <li>
-                    <a href="#" onclick="javascript:water_improved_func(2015);">Accès à l'eau améliorée</a>
+                    <a href="#" onclick="javascript:water_improved_func();">Accès à l'eau améliorée</a>
                 </li>
             </ul>
         </div>
@@ -142,20 +130,18 @@
         <div>
 
             <div id="titre"> LE TITRE </div>
+            
             <div id="container"></div> 
-
             
 <form id="reservation">
   <label for="minbeds">Année Selectionnée</label>
   <select name="minbeds" id="minbeds">
     <option value=1995>1995</option>
     <option value=2005>2005</option>
-    <option selected="selected" value=2015>2015</option>
+    <option value=2015>2015</option>
   </select>
 
 </form>
-
-
         </div> 
 
        
@@ -180,8 +166,10 @@
           $("#wrapper").toggleClass("toggled");
       });
     </script>
+
     
      <!-- FONCTIONS DES MAPS -->  
+   
 
      <script type="text/javascript">
      function population_func(annee){
@@ -191,9 +179,9 @@
      </script>  
 
      <script type="text/javascript">
-         function water_improved_func(annee){
+         function water_improved_func(){
          document.getElementById('container').innerHTML = "";
-          Water_improved(annee);  
+          Water_improved();  
       }
      </script> 
 
