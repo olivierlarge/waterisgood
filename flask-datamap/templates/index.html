@@ -55,15 +55,15 @@
             slider.slider( "value", this.selectedIndex + 1 );
             var e = document.getElementById("minbeds");
             var value = e.options[e.selectedIndex].value;
-            if (document.getElementById('container').innerHTML == "Populations"){
+            if (document.getElementById('titre').innerHTML == "Populations"){
                   population_func(value);
                 }
 
-              else if(document.getElementById('container').innerHTML == "Ratios d'accès à l'eau améliorée"){
+              else if(document.getElementById('titre').innerHTML == "Ratios d'accès à l'eau améliorée"){
                   water_improved_func(value);
                   }
 
-              else if(document.getElementById('container').innerHTML == "Ratios d'accès aux installations sanitaires"){
+              else if(document.getElementById('titre').innerHTML == "Ratios d'accès aux installations sanitaires"){
                   water_supply_func(value);
                   }
           });
