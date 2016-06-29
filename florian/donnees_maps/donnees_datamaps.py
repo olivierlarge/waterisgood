@@ -3,7 +3,7 @@ import csv
 serie_pop=[]
 pop_country=[]
 
-with open("water_improved.csv","rU") as file:
+with open("pop_data1990.csv","rU") as file:
 	next(file,None)
 	next(file,None)
 	next(file,None)
@@ -15,11 +15,11 @@ with open("water_improved.csv","rU") as file:
 
   		if (row[3]!=""):
   			pop_country.append(row[1])
-  			pop_country.append(float(row[3]))
+  			pop_country.append(1000*(float(row[3])+1))
   			serie_pop.append(pop_country)
 
 print (serie_pop)
 
-with open("serie_water_improved.txt","w") as file2:
+with open("serie_pop_1990.txt","w") as file2:
 	file2.write(str(serie_pop))
 
