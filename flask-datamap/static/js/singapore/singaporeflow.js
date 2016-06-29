@@ -112,7 +112,7 @@ graph.links = graph.links.map(function(x) {
  
 // add in the title for the nodes
   node.append("text")
-      .style('fill', 'white')
+      .style('fill', 'black')
       .attr("x", -6)
       .attr("y", function(d) { return d.dy / 2; })
       .attr("dy", ".35em")
