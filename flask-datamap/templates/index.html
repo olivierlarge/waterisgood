@@ -44,6 +44,10 @@
               else if(document.getElementById('titre').innerHTML == "Ratios d'accès à l'eau améliorée"){
                   water_improved_func(value);
                   }
+
+              else if(document.getElementById('titre').innerHTML == "Ratios d'accès aux installations sanitaires"){
+                  water_supply_func(value);
+                  }
             }
           });
 
@@ -57,6 +61,10 @@
 
               else if(document.getElementById('container').innerHTML == "Ratios d'accès à l'eau améliorée"){
                   water_improved_func(value);
+                  }
+
+              else if(document.getElementById('container').innerHTML == "Ratios d'accès aux installations sanitaires"){
+                  water_supply_func(value);
                   }
           });
         });
@@ -72,7 +80,9 @@
 
     <script type="text/javascript" src="../static/maps/population.js"></script>
     <script type="text/javascript" src="../static/maps/water_improved.js"></script>
-    
+    <script type="text/javascript" src="../static/maps/water_supply.js"></script>
+
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
     <script src="../static/bower_components/datamaps/dist/datamaps.world.min.js"></script>
@@ -132,6 +142,9 @@
                 </li>
                 <li>
                     <a href="#" onclick="javascript:water_improved_func(2015);">Accès à l'eau améliorée</a>
+                </li>
+                <li>
+                    <a href="#" onclick="javascript:water_supply_func(2015);">Accès aux installations sanitaires</a>
                 </li>
             </ul>
         </div>
@@ -194,6 +207,13 @@
          function water_improved_func(annee){
          document.getElementById('container').innerHTML = "";
           Water_improved(annee);  
+      }
+     </script> 
+
+          <script type="text/javascript">
+         function water_supply_func(annee){
+         document.getElementById('container').innerHTML = "";
+          Water_supply(annee);  
       }
      </script> 
 
