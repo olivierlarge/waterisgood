@@ -1,7 +1,7 @@
     function Water_improved(annee) {
 
     document.getElementById('container').innerHTML = "";
-    document.getElementById("titre").innerHTML = "Ratios d'accès à l'eau améliorée";
+    document.getElementById("titre").innerHTML = "Access Ratios to Improved Drinking Water";
     document.getElementById("titre").style.color = "#004000";
     
 
@@ -70,7 +70,7 @@
                 // tooltip content
                 return ['<div class="hoverinfo">',
                     '<strong>', geo.properties.name, '</strong>',
-                    '<br>Ratio d\'accès à l\'eau ameliorée: <strong>', data.numberOfThings,'%', '</strong>',
+                    '<br>Access ratios to Improved drinking water: <strong>', data.numberOfThings,'%', '</strong>',
                     '</div>'].join('');
             }
         }

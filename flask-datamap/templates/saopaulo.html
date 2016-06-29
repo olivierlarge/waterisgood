@@ -65,14 +65,14 @@
 		}
 		#section4 {
 			height: 100%;
-		    padding-top: 150px;
+		    padding-top: 50px;
 		    text-align: center;
 		    background: white;
 		}
 		#section5 {
 			height: 100%;
 		    padding-top: 150px;
-		    text-align: center;
+
 		    background: #d7eced;
 		}
 
@@ -80,7 +80,11 @@
 			font-family: Bedrock;
 			font-size:150%;
 		}
-
+		img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+}
 
 	</style>
 </head>
@@ -104,13 +108,13 @@
 					<a class="page-scroll" href="#section2">A mega city</a>
 				</li>
 				<li>
-					<a class="page-scroll" href="#section3">Major drought in 2015</a>
+					<a class="page-scroll" href="#section3">Major drought in 2014</a>
 				</li>
 				<li>
-					<a class="page-scroll" href="#section4">No lesson learned</a>
+					<a class="page-scroll" href="#section4">Floods in 2015</a>
 				</li>
 				<li>
-					<a class="page-scroll" href="#section5">Conclusion</a>
+					<a class="page-scroll" href="#section5">2016 conclusions</a>
 				</li>
 			</ul>
 		</div>
@@ -129,15 +133,34 @@
 
 			<!-- Section 2 : A mega city-->
 			<section class="container-fluid" id="section2">
-				<h1><center>A mega city</center></h1><br/><br/>
-				<p>Sao Paulo is the most populous city in Brazil, the Americas and the Southern Hemisphere. It ranks as the 11th most populous city on Earth with 21 millions habitants (with suburb).</p>
-				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				<h1><center>A mega city</center></h1><br/><br/><br/>
+				<p>Sao Paulo is the most populous city in Brazil, and one of the most populous city of the Americas (behind New York and Mexico). It ranks as the 6th most populous city on Earth with 21 millions habitants (with suburb).</p>
+				<br/><br/><br/>
+<center>
+				<svg height="150" width="250">
+				  <circle cx="50" cy="50" r="10" stroke="black" stroke-width="3" fill="white"/>
+				<text x="25" y="130" font-family="sans-serif" font-size="20px" fill="black">Singapour</text>
+				</svg> 
+				<svg height="150" width="250">
+				  <circle cx="50" cy="50" r="20" stroke="black" stroke-width="3" fill="white"/>
+				<text x="25" y="130" font-family="sans-serif" font-size="20px" fill="black">Paris</text>
+				</svg> 
+				 <svg height="150" width="250">
+				  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="#d7eced"/>
+				<text x="5" y="130" font-family="sans-serif" font-size="20px" fill="black">Sao Paulo</text>
+				</svg> 
+				 <svg height="150" width="100">
+				  <circle cx="50" cy="50" r="45" stroke="black" stroke-width="3" fill="white"/>
+				<text x="5" y="130" font-family="sans-serif" font-size="20px" fill="black">New York</text>  
+				</svg>
+				</center>
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 			</section>
 
 			<!-- Section 3 : The major drought of 2015 -->
 			<section class="container-fluid" id="section3">
-				<h1><center>Major drought in 2015</center></h1><br/><br/>
+				<h1><center>Major drought in 2014</center></h1><br/><br/>
 				<p>In 2015, Sao Paulo faced its greatest water crisis in over 80 years. Millions of its residents have faced daily water shutoffs. Climate change was one of the main cause of the problem, decreasing rainfall in this area. Poor water infrastructure have made the situation worse.</p>
 				<div id="myhighcharts" style = "width:100%; height:300px; top: 50px; padding-top: 20px;"></div>
 				<br/><br/>
@@ -149,15 +172,26 @@
 
 			<!-- Section 4 : No lesson learned -->
 			<section class="container-fluid" id="section4">
-				<h1><center>No lesson learned</center></h1><br/><br/>
-				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				<h1><center>Floods in 2015</center></h1><br/><br/>
+				<p>Heavy rains during 2015 brought flooding to the street of Sao Paulo. Water doesn't always where we want it to go : despite torrential rainfall, some area of the region was still suffering from drought</p>
+				<br/><br/><br/>
+				<img src='../static/img/saopaulo/floods.jpg' alt="" /><br/><br/><br/>
+				<p> In late 2015, reservoir system was only filled at 50%.</p>
+				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 			</section>
 
 			<!-- Section 5 : Conclusion -->
 			<section class="container-fluid" id="section5">
-				<h1><center>Conclusion</center></h1><br/><br/>
+				<h1><center>2016 conclusions</center></h1><br/><br/>
+				<center><p>2015-2016 water crisis was a chock for Sao Paulo habitant. Two lessons came outside of the drought :</p></center><br/><br/>
+				<center>
+				<p><b>Maintain water infrastructures :</b><br/> More than 30 percent of São Paulo’s drinking water is estimated to be lost to leaks in the distribution network<br/><br/>
+  				<b>Protect existing vegetation :</b><br/> forest provide a cheap way to clean and keep water. Deforestation was one of the main cause of this drought/flood crisis.<br/><br/>
+  				<b>Invest in wastewater recycling :</b><br/> such measures can help meet water demands without the need for costly long-distance water transfers.
+
+  				</p></center>
 				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 			</section>
