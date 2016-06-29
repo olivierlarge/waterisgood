@@ -1,7 +1,7 @@
     function Water_supply(annee) {
 
     document.getElementById('container').innerHTML = "";
-    document.getElementById("titre").innerHTML = "Ratios d'accès aux installations sanitaires";
+    document.getElementById("titre").innerHTML = "Access Ratios to Sanitation Facilities";
     document.getElementById("titre").style.color = "#C61331";
     
 
@@ -71,7 +71,7 @@
                 // tooltip content
                 return ['<div class="hoverinfo">',
                     '<strong>', geo.properties.name, '</strong>',
-                    '<br>Ratio d\'accès aux installations sanitaires: <strong>', data.numberOfThings,'%', '</strong>',
+                    '<br>Access Ratios to Sanitation Facilities: <strong>', data.numberOfThings,'%', '</strong>',
                     '</div>'].join('');
             }
         }
