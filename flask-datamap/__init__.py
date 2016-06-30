@@ -13,7 +13,7 @@ app = Flask(__name__)
 @app.route('/introduction_kpe')
 def introduction():
     try:
-        return render_template("introduction.html")
+        return render_template("Introduction.html")
     except Exception as e:
         return str(e)
 
