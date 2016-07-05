@@ -218,7 +218,7 @@ function zoomed() {
                   .data(myData)
                   .enter()      
                   .append("text")
-                  .style("opacity", 0)
+                  .style("opacity", 15)
                   .attr("class", "dot")
                   .style("fill", function(d) { return color(d.type)})
                   .style("background-color","white")
@@ -229,20 +229,21 @@ function zoomed() {
                     var nodeSelection = d3.select(this).style({opacity:'1.0'});
                     nodeSelection.select("text").style({opacity:'2.0'});
                   })
-                  .attr('display', "none");  
+                  .attr('display', "inline");  
 
               layerReservoirs.selectAll("circle")  
               .data(myData)
               .enter()      
               .append("circle") 
-              .style("opacity", 0)
+              .style("opacity", 15)
               .attr("class", "dot")
               //.style("fill", "#1074f4")
               .style("fill", function(d) { return color(d.type)})
               .attr("r", 5)
               .attr("cx", function(d) { return x(d.longitude) +285})
               .attr("cy", function(d) { return y(d.latitude) +256})
-              .attr('display', "none");  
+              .attr('display', "inline");  
+         
                 
 
 

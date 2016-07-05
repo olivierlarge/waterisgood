@@ -51,11 +51,11 @@ $(function() {
     
     // Render the circle
     chart.renderer.circle(xpos, ypos, circleradius).attr({
-        fill: '#ddd',
+        fill: 'white',
     }).add();
 
     // Render the image :
-   chart.renderer.image('../img/introduction/earth.jpg', '44.5%' , '25%' , 230, 230)
+   chart.renderer.image('../img/introduction/earth.jpg', '45.5%' , '35.5%', '9%', '38%')
             .add();
     });
 });
@@ -117,11 +117,11 @@ $(function() {
     
     // Render the circle
     chart.renderer.circle(xpos, ypos, circleradius).attr({
-        fill: '#ddd',
+        fill: 'white',
     }).add();
 
         // Render the image :
-   chart.renderer.image('../img/introduction/glass_water.jpg', '44.5%' , '30%' , 230, 230)
+   chart.renderer.image('../img/introduction/glass_water.jpg', '45.1%' , '36.8%', '10%', '42%')
             .add();
 
     });
