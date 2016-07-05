@@ -55,7 +55,7 @@ $(function() {
     }).add();
 
     // Render the image :
-   chart.renderer.image('../static/img/introduction/earth.jpg', '44.5%' , '25%' , 230, 230)
+   chart.renderer.image('../img/introduction/earth.jpg', '44.5%' , '25%' , 230, 230)
             .add();
     });
 });
@@ -121,7 +121,7 @@ $(function() {
     }).add();
 
         // Render the image :
-   chart.renderer.image('../static/img/introduction/glass_water.jpg', '44.5%' , '30%' , 230, 230)
+   chart.renderer.image('../img/introduction/glass_water.jpg', '44.5%' , '30%' , 230, 230)
             .add();
 
     });
